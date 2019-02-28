@@ -1,0 +1,34 @@
+﻿<Controls:MetroWindow x:Class="LMT_Flickr_Downloader.About"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      Title="Thông tin về LMT Flickr Downloader"
+                      Height="250"
+                      Width="462" Icon="flickr.ico"
+                      WindowStartupLocation="CenterScreen"
+                      ResizeMode="CanMinimize">
+    <Grid>
+        <Label FontWeight="Bold" Margin="169,16,2,158"
+               FontSize="22">LMT Flickr Downloader</Label>
+        <Label Margin="169,42,117,132"
+               FontSize="15" Content="Phiên bản 1.1&#xD;&#xA;© Le Minh Thanh 2018"/>
+        <Image Source="flickr.ico" Margin="10,-4,300,39"/>
+        <Label Margin="169,85,2,61"
+            FontSize="15" Content="LMT Flickr Downloader là 1 phần mềm&#xD;&#xA;hỗ trợ bạn dễ dàng tải các hình ảnh&#xD;&#xA;chất lượng cao từ Flickr!"
+               HorizontalContentAlignment="Stretch"/>
+        <Separator Margin="0,161,0,38"></Separator>
+        <TextBlock x:Name="TextBlocktacGia" Margin="10,182,371,10" FontSize="15">           
+            <Hyperlink NavigateUri="https://xn--lminhthnh-w1a7h.vn/" RequestNavigate="HyperlinktacGia_OnRequestNavigate">
+                Về tác giả
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock x:Name="TextBlockHuongDan" Margin="136,182,245,10" FontSize="15"><Hyperlink NavigateUri="https://xn--lminhthnh-w1a7h.vn/lmt-flickr-downloader/" RequestNavigate="HyperlinkHuongDan_OnRequestNavigate"><Run Text="Hướng dẫn"/></Hyperlink></TextBlock>
+        
+        <TextBlock x:Name="TextBlockOther" Margin="328,182,0,10" FontSize="15">           
+            <Hyperlink NavigateUri="https://xn--lminhthnh-w1a7h.vn/" 
+                       Click="Hyperlink_ClickAsync">
+                Xóa API
+            </Hyperlink>
+        </TextBlock>
+    </Grid>
+</Controls:MetroWindow>

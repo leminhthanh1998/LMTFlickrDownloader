@@ -1,0 +1,9 @@
+https://www.flickr.com/services/api/explore/flickr.auth.checkToken
+
+https://www.flickr.com/services/api/explore/flickr.auth.oauth.getAccessToken
+
+https://www.flickr.com/services/api/explore/flickr.people.getPhotos
+
+https://www.flickr.com/groups/51035612836@N01/discuss/72157663673712136/
+
+methodflickr.auth.oauth.getaccesstokenapi_key96bad8bd755d57d41cc6862546535300

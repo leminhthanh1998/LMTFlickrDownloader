@@ -1,0 +1,110 @@
+﻿<Controls:MetroWindow x:Class="LMT_Flickr_Downloader.CaNhan"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                      Title="LMT Flickr Downloader-Tải ảnh tại trang cá nhân này"
+                      Height="297"
+                      Width="590"
+                      ResizeMode="CanMinimize"
+                      WindowStartupLocation="CenterOwner"
+                      GlowBrush="{DynamicResource AccentColorBrush}"
+                      Loaded="CaNhan_OnLoaded" Icon="flickr.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--Chon chat luong hinh anh-->
+        <WrapPanel>
+            <Label Content="Chọn chất lượng ảnh:"
+               FontSize="15"></Label>
+            <Slider Maximum="7"
+                x:Name="SliderChatLuong"
+                ValueChanged="SliderChatLuong_OnValueChanged"
+                IsSnapToTickEnabled="True"
+                TickFrequency="1" Minimum="1" Value="0" 
+                Width="400" VerticalAlignment="Center" Margin="10 3 0 0"/>
+        </WrapPanel>
+        <!--Kich thuoc anh duoc chon-->
+        <Label Content="Trung bình 500"
+               FontSize="15"
+               x:Name="LabelChatLuong"
+               HorizontalContentAlignment="Center"
+               Grid.Row="1"
+               VerticalAlignment="Top"></Label>
+
+        <!--Chon thu muc luu anh-->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Thư mục lưu ảnh:"
+            FontSize="15" VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1"
+                 FontSize="14"
+                     Height="14"
+                 x:Name="txbPath"/>
+            <Button Height="34" Width="34" Grid.Column="2"
+                Style="{DynamicResource MetroCircleButtonStyle}"
+                x:Name="btnSelectFolder"
+                Click="BtnSelectFolder_OnClick">
+                <iconPacks:PackIconMaterialLight Kind="Folder" />
+            </Button>
+        </Grid>
+
+        <!--ProgressRing-->
+        <Controls:ProgressRing HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" 
+                               Visibility="Hidden"
+                               x:Name="ProgressRing"
+                               Grid.RowSpan="7"/>
+
+        <!--Label thong bao so luong anh co the tai-->
+        <Label Content="Đã tìm thấy 0 ảnh có thể tải!"
+            Grid.Row="3"
+            FontSize="15"
+            x:Name="LabelKetQua"
+               VerticalAlignment="Center"/>
+
+        <!--Tuy chon tai anh voi chat luong tot nhat-->
+        <CheckBox Grid.Row="4"
+                  Content="Tải ảnh chất lượng tốt nhất!"
+                  FontSize="15"
+                  Margin="5 0 0 0"
+                  x:Name="CkbAuto"
+                  Checked="CkbAuto_Checked"
+                  Unchecked="CkbAuto_Unchecked"/>
+        <CheckBox Grid.Row="4"
+                  HorizontalAlignment="Right"
+                  Content="Mở thư mục sau khi tải xong"
+                  Margin="0 0 10 0"
+                  FontSize="15"
+                  x:Name="CkbOpenfolder"/>
+        <!--Button download hinh anh-->
+        <Button Grid.Row="5"
+                x:Name="btnDownload"
+                Click="BtnDownload_OnClick"
+                Height="30" Width="60">Tải!</Button>
+
+        <Controls:MetroProgressBar x:Name="ProgressBar" 
+                Height="19"
+                                   VerticalAlignment="Center"
+                                   Grid.Row="6"
+                                   Foreground="#EA4333"
+                                   />
+        <Label x:Name="LabelProgress"
+               Content="0%" Grid.Row="6"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"></Label>
+    </Grid>
+</Controls:MetroWindow>
